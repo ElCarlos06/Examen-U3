@@ -34,7 +34,7 @@ public class ProductoController {
         return  new ResponseEntity<>(map,code == 201 ? HttpStatus.OK : HttpStatus.NOT_FOUND);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public ResponseEntity<Object> update(@RequestBody ProductoDto  productoDto, @PathVariable Integer id) {
         Map<String, Object> map = productoService.update(productoDto, id);
         int code = (Integer) map.get("code");
